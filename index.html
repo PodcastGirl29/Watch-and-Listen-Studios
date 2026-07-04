@@ -60,25 +60,6 @@
   nav.links ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;justify-self:center;}
   nav.links a{text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--paper-dim);}
   nav.links a:hover{color:var(--gold-bright);}
-  .nav-dropdown{position:relative;}
-  .nav-dropdown-toggle{
-    background:none;border:none;cursor:pointer;font-family:'General Sans',sans-serif;
-    text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;
-    color:var(--paper-dim);display:inline-flex;align-items:center;gap:4px;padding:0;
-  }
-  .nav-dropdown-toggle:hover, .nav-dropdown.open .nav-dropdown-toggle{color:var(--gold-bright);}
-  .nav-dropdown-toggle .caret{font-size:10px;transition:transform .2s ease;}
-  .nav-dropdown.open .nav-dropdown-toggle .caret{transform:rotate(180deg);}
-  .nav-dropdown-menu{
-    list-style:none;margin:0;padding:6px;position:absolute;top:calc(100% + 14px);left:50%;
-    transform:translateX(-50%);background:var(--panel);border:1px solid var(--line-dark-strong);
-    border-radius:12px;min-width:200px;display:none;flex-direction:column;gap:0;
-    box-shadow:0 20px 40px -20px rgba(0,0,0,0.6);z-index:60;
-  }
-  .nav-dropdown.open .nav-dropdown-menu{display:flex;}
-  .nav-dropdown-menu li{width:100%;margin:0;}
-  .nav-dropdown-menu a{display:block;padding:8px 12px;line-height:1.3;border-radius:8px;font-size:13px;text-transform:none;letter-spacing:0.01em;color:var(--paper);text-decoration:none;}
-  .nav-dropdown-menu a:hover{background:var(--panel-2);color:var(--gold-bright);}
   .nav-cta{justify-self:end;font-size:13px;text-decoration:none;color:var(--paper);border:1px solid var(--line-dark-strong);padding:10px 20px;border-radius:999px;white-space:nowrap;transition:border-color .2s ease,color .2s ease;}
   .nav-cta:hover{border-color:var(--gold-bright);color:var(--gold-bright);}
   .nav-toggle{display:none;}
@@ -239,7 +220,7 @@
   #services .acc-item{background:#fff;border-bottom-color:var(--line-light);}
   #services .acc-head{color:var(--dark);}
   #services .acc-head .plus{color:var(--dark-dim);}
-  #services .acc-item.open{background:#111110;}
+  #services .acc-item.open{background:var(--panel);}
   #services .acc-item.open .acc-head{color:var(--paper);}
   #services .acc-item.open .plus{color:var(--gold-bright);}
   #services .acc-item.open .acc-body p{color:var(--paper-dim);}
@@ -270,13 +251,8 @@
     <a href="#top" class="brand">Watch <em>and</em> Listen Studios</a>
     <nav class="links">
       <ul>
-        <li class="nav-dropdown">
-          <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Why? <span class="caret" aria-hidden="true">&#9662;</span></button>
-          <ul class="nav-dropdown-menu">
-            <li><a href="#why-podcast">Why a podcast?</a></li>
-            <li><a href="#why-us">Why Watch &amp; Listen?</a></li>
-          </ul>
-        </li>
+        <li><a href="#why-podcast">Why a Podcast?</a></li>
+        <li><a href="#why-us">Why Watch &amp; Listen?</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#podcasts">Podcasts</a></li>
@@ -631,57 +607,6 @@
         btn.setAttribute('aria-expanded','true');
       }
     });
-  });
-
-  // "Why?" nav dropdown — fully delegated on document, no stale references possible
-  document.addEventListener('click', function(e){
-    const toggleBtn = e.target.closest('.nav-dropdown-toggle');
-    const dropdownLink = e.target.closest('.nav-dropdown-menu a');
-    const clickedInsideAnyDropdown = e.target.closest('.nav-dropdown');
-    const allDropdowns = document.querySelectorAll('.nav-dropdown');
-
-    if(toggleBtn){
-      e.preventDefault();
-      const parentDrop = toggleBtn.closest('.nav-dropdown');
-      const wasOpen = parentDrop.classList.contains('open');
-      allDropdowns.forEach(d=>{
-        d.classList.remove('open');
-        const t = d.querySelector('.nav-dropdown-toggle');
-        if(t) t.setAttribute('aria-expanded','false');
-      });
-      if(!wasOpen){
-        parentDrop.classList.add('open');
-        toggleBtn.setAttribute('aria-expanded','true');
-      }
-      return;
-    }
-
-    if(dropdownLink){
-      allDropdowns.forEach(d=>{
-        d.classList.remove('open');
-        const t = d.querySelector('.nav-dropdown-toggle');
-        if(t) t.setAttribute('aria-expanded','false');
-      });
-      return;
-    }
-
-    if(!clickedInsideAnyDropdown){
-      allDropdowns.forEach(d=>{
-        d.classList.remove('open');
-        const t = d.querySelector('.nav-dropdown-toggle');
-        if(t) t.setAttribute('aria-expanded','false');
-      });
-    }
-  });
-
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      document.querySelectorAll('.nav-dropdown.open').forEach(d=>{
-        d.classList.remove('open');
-        const t = d.querySelector('.nav-dropdown-toggle');
-        if(t) t.setAttribute('aria-expanded','false');
-      });
-    }
   });
 
   // Reactive hero waveform glow: mouse and scroll responsive canvas overlay
