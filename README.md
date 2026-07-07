@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Watch and Listen Studios, Podcast Strategy, Production &amp; Consulting</title>
-<meta name="description" content="Watch and Listen Studios is a full-service podcast production and consulting agency, for best in breed podcast content.">
+<title>Watch & Listen Studios, Podcast Consulting, Strategy &amp; Production</title>
+<meta name="description" content="Watch & Listen Studios is an independent consultancy specialising in audio and video podcasts for thought leaders, brands and organisations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
