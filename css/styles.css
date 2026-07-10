@@ -272,7 +272,7 @@
   .zone-light .badge:hover{color:#191510;}
 
   .zone-dark .about-grid p{color:var(--paper-dim);}
-  #about .awards{background:var(--offwhite);border-color:var(--line-light);box-shadow:0 20px 50px -30px rgba(0,0,0,0.35);}
+  #about .awards{width:100%;background:var(--offwhite);border-color:var(--line-light);box-shadow:0 20px 50px -30px rgba(0,0,0,0.35);}
   #about .award{border-top-color:var(--line-light);}
   #about .award strong{color:var(--dark);}
   #about .award span.detail{color:var(--dark-dim);}
@@ -291,9 +291,10 @@
   flex-direction:column;
   gap:28px;
   align-self:start;
+  width:100%;
 }
 .about-portrait{
-  margin:0 0 0 auto;
+  margin:0;
   width:150px;
   max-width:100%;
 }
@@ -334,7 +335,7 @@
   text-transform:uppercase;
   color:var(--gold);
 }
-#about .awards{
+#about .awards{width:100%;
   margin-top:4px;
 }
 @media (max-width:900px){
@@ -342,7 +343,7 @@
     max-width:460px;
   }
   .about-portrait{
-    margin-left:0;
+    margin:0;
     width:150px;
   }
 }

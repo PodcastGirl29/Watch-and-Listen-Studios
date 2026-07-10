@@ -32,3 +32,8 @@ Do not upload only `index.html`; the CSS, JavaScript and image folders are requi
 - Fixed the About portrait frame itself to a true square.
 - Reduced the portrait to 150px wide.
 - Preserved the existing shadow and crop.
+
+## Version 1.5 update
+
+- Left-aligned Nicole Goodman's square portrait with the Awards panel.
+- Kept the portrait at 150px and preserved the existing shadow.
