@@ -294,9 +294,12 @@
 }
 .about-portrait{
   margin:0 0 0 auto;
-  width:min(100%, 180px);
+  width:150px;
+  max-width:100%;
 }
 .about-portrait-frame{
+  width:100%;
+  aspect-ratio:1 / 1;
   overflow:hidden;
   border:1px solid var(--line-light);
   border-radius:16px;
@@ -305,7 +308,8 @@
 }
 .about-portrait-frame img{
   width:100%;
-  aspect-ratio:1/1;
+  height:100%;
+  display:block;
   object-fit:cover;
   object-position:center 38%;
   filter:grayscale(100%);
@@ -339,5 +343,6 @@
   }
   .about-portrait{
     margin-left:0;
+    width:150px;
   }
 }

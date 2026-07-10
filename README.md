@@ -26,3 +26,9 @@ Do not upload only `index.html`; the CSS, JavaScript and image folders are requi
 - Added a stronger shadow matching the visual treatment of the Awards panel.
 
 - Changed Nicole Goodman portrait to a square crop in the About section.
+
+## Version 1.4 update
+
+- Fixed the About portrait frame itself to a true square.
+- Reduced the portrait to 150px wide.
+- Preserved the existing shadow and crop.
