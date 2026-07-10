@@ -24,3 +24,5 @@ Do not upload only `index.html`; the CSS, JavaScript and image folders are requi
 
 - Reduced Nicole Goodman portrait size in the About section.
 - Added a stronger shadow matching the visual treatment of the Awards panel.
+
+- Changed Nicole Goodman portrait to a square crop in the About section.

@@ -305,9 +305,9 @@
 }
 .about-portrait-frame img{
   width:100%;
-  aspect-ratio:293/350;
+  aspect-ratio:1/1;
   object-fit:cover;
-  object-position:center;
+  object-position:center 38%;
   filter:grayscale(100%);
 }
 .about-portrait figcaption{
