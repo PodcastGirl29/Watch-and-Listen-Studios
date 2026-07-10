@@ -19,3 +19,8 @@ Upload the **contents of this folder** to the root of the existing
 - Folder: `/(root)`
 
 Do not upload only `index.html`; the CSS, JavaScript and image folders are required.
+
+## Version 1.2 update
+
+- Reduced Nicole Goodman portrait size in the About section.
+- Added a stronger shadow matching the visual treatment of the Awards panel.

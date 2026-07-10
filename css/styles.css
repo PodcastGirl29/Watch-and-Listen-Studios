@@ -293,14 +293,15 @@
   align-self:start;
 }
 .about-portrait{
-  margin:0;
+  margin:0 0 0 auto;
+  width:min(100%, 180px);
 }
 .about-portrait-frame{
   overflow:hidden;
   border:1px solid var(--line-light);
-  border-radius:18px;
+  border-radius:16px;
   background:var(--offwhite);
-  box-shadow:0 20px 50px -30px rgba(27,26,23,0.22);
+  box-shadow:0 20px 50px -30px rgba(27,26,23,0.35);
 }
 .about-portrait-frame img{
   width:100%;
@@ -310,7 +311,8 @@
   filter:grayscale(100%);
 }
 .about-portrait figcaption{
-  padding:14px 4px 0;
+  padding:14px 2px 0;
+  text-align:left;
 }
 .about-portrait-name{
   display:block;
@@ -334,5 +336,8 @@
 @media (max-width:900px){
   .about-side{
     max-width:460px;
+  }
+  .about-portrait{
+    margin-left:0;
   }
 }
