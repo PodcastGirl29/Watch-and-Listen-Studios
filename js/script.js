@@ -1,4 +1,82 @@
 (function(){
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('nav.links');
+  const list = nav ? nav.querySelector('ul') : null;
+
+  if (!toggle || !nav || !list) return;
+
+  // Remove the old inline handler, which styled the list but left its parent hidden.
+  toggle.removeAttribute('onclick');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'mobile-navigation');
+  nav.id = 'mobile-navigation';
+
+  function closeMenu() {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = 'Menu';
+    nav.removeAttribute('style');
+    list.removeAttribute('style');
+
+    list.querySelectorAll('a').forEach(link => {
+      link.removeAttribute('style');
+    });
+  }
+
+  function openMenu() {
+    nav.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.textContent = 'Close';
+
+    nav.style.display = 'block';
+    nav.style.position = 'absolute';
+    nav.style.top = '100%';
+    nav.style.left = '0';
+    nav.style.right = '0';
+    nav.style.background = '#171717';
+    nav.style.borderTop = '1px solid rgba(245,242,237,0.10)';
+    nav.style.borderBottom = '1px solid rgba(245,242,237,0.18)';
+    nav.style.boxShadow = '0 18px 35px rgba(0,0,0,0.35)';
+
+    list.style.display = 'flex';
+    list.style.flexDirection = 'column';
+    list.style.gap = '0';
+    list.style.margin = '0';
+    list.style.padding = '10px 20px 18px';
+
+    list.querySelectorAll('a').forEach(link => {
+      link.style.display = 'block';
+      link.style.padding = '12px 0';
+      link.style.fontSize = '13px';
+      link.style.borderBottom = '1px solid rgba(245,242,237,0.10)';
+    });
+  }
+
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  });
+
+  list.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', event => {
+    if (
+      nav.classList.contains('is-open') &&
+      !nav.contains(event.target) &&
+      !toggle.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+})();
+
+(function(){
     const el = document.getElementById('about-eq-line');
     if(!el) return;
     for(let i=0;i<60;i++){
